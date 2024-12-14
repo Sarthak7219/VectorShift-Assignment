@@ -1,0 +1,360 @@
+body {
+  margin: 0;
+  font-family: "Inter", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F1F1FE;
+}
+
+code {
+  font-family: "Inter", serif,
+    monospace;
+}
+
+p, h1{
+  margin: 0px;
+}
+
+.react-flow__pane {
+  cursor: grab !important;
+}
+
+.react-flow__pane:active {
+  cursor:  grabbing !important;
+}
+
+.basenode{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 300px;
+  padding: 25px 20px 35px 20px;
+  border-radius: 15px;
+  position: relative;
+  background-color: #FFFFFF;
+  box-shadow: 0px 19px 30px -15px rgba(0, 48, 209, 0.15);
+}
+
+.basenode:active{
+  outline: 2px solid #6365f1cf;
+}
+
+.node-content{
+  padding: 0px 7px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.basenode .heading{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.heading .left, .heading .right{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.button{
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 25px;
+    background-color: #6366f1;
+    color: white;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: inherit;
+    margin-top: 15px;
+}
+
+
+.heading .left img, .heading .right .node-opt-icon{
+  width: 24px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* .heading .left img, .heading .right .node-opt-icon:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+} */
+
+.heading .left p{
+  color: #17151E;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.react-flow__handle {
+  background: #ffffff !important;
+  min-width: none !important;
+  min-height: none !important;
+  width: 10px !important;
+  height: 10px !important;
+  pointer-events: none;
+  border: 3.5px solid #9ea0f6 !important;
+}
+
+.react-flow__handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #9ea0f6; 
+  opacity: 0; 
+}
+
+.react-flow__handle:active:after {
+  opacity: 1;
+}
+
+.react-flow__handle:hover{
+  box-shadow: 0px 0px 3px 2px #6366f1b3 !important;
+}
+
+.react-flow__handle-right{
+  right: -8px !important;
+}
+
+.react-flow__handle-left{
+  left: -8px !important;
+}
+
+label{
+  color: #1C1D3C;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 10px;
+}
+
+.select-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.select-box select{
+  appearance: none; /* Removes the default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* Custom arrow */
+.select-box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url('../public/assets/icons/dropdown-icon.svg'); /* Replace with your arrow image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none; /* Ensures click targets the select */
+}
+
+.select-box select:focus, .input-box:focus {
+  outline: none;
+  border-color: #6366F1;
+}
+
+.input-container{
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.input-box{
+  margin-top: 5px;
+  display: block;
+  min-height: 50px;
+  background-color: white;
+  /* color: #ADADB8; */
+  padding: 15px 15px 15px 17.5px;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #CBCCF5;
+  border-radius: 14px;
+  width: 100% !important;
+  box-sizing: border-box;
+  letter-spacing: 0px;
+  font-family: inherit;
+}
+
+textarea{
+  outline: none;
+  resize: none;
+}
+
+textarea::-webkit-scrollbar{
+  width: 0px;
+}
+
+.if-then-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 80px;
+  position: relative;
+}
+
+.delete-edge-icon{
+  cursor: pointer;
+  width: 24px;
+  height: auto;
+}
+
+.else-if-remove-icon{
+  position: absolute;
+  top: 4px;
+  left: -13px;
+  width: 28px;
+  height: auto;
+  cursor: pointer;
+}
+
+
+.dropdown-item {
+  padding: 10px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  accent-color: #6366F1; /* Change the color of the checkbox */
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkbox-text {
+  font-weight: bold; /* Change the font weight of the text when checked */
+}
+
+.checkbox-text {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: inherit;
+  color: black;
+}
+
+.toolbar{
+  
+  min-height: 60px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 23.134px;
+  background: #FFF;
+  box-shadow: 0px 3.085px 10.796px 0px rgba(0, 0, 0, 0.10);
+}
+
+.drag-node{
+  display: flex;
+  width: 70px;
+  padding: 12.338px 20.05px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6.169px;
+  cursor: grab;
+  box-sizing: border-box;
+}
+
+.drag-node-icon{
+  width: 27.759px;
+  min-height: 27.759px;
+  height: auto;
+  object-fit: contain;
+
+}
+
+.drag-node-text{
+  width: max-content;
+  color: #6366F1;
+  font-family: inherit;
+  font-size: 9.254px;
+  font-weight: 400;
+}
+
+.result-box{
+  display: flex;
+  width: 65px;
+  padding: 9px 13px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  background: #E4DDFC;
+
+}
+
+.result-box h1{
+  color: #000;
+text-align: center;
+font-family: inherit;
+font-size: 22px;
+font-weight: 700;
+
+}
+
+.result-box p{
+  color: #000;
+
+font-family: inherit;
+font-size: 11px;
+font-weight: 500;
+}
+
+.result-card{
+  display: flex;
+padding: 12px 17px 17px 17px;
+flex-direction: column;
+align-items: center;
+gap: 16px;
+border-radius: 26px;
+background: #FFF;
+position: absolute;
+top: 25px;
+right: 25px;
+box-shadow: 0px 19px 30px -15px rgba(0, 48, 209, 0.15);
+}
+
+.result-card .wrapper{
+  display: flex;
+justify-content: flex-end;
+align-items: center;
+align-content: center;
+gap: 8px;
+flex-wrap: wrap;
+}
+
+.result-card svg {
+  color: black; /* Red color for the cross icon */
+  transition: transform 0.2s;
+}
+
+.result-card svg:hover {
+  transform: scale(1.2); /* Slight zoom on hover */
+}
