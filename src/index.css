@@ -152,6 +152,10 @@ label{
   cursor: pointer;
 }
 
+.checkbox-container{
+  cursor: pointer;
+}
+
 /* Custom arrow */
 .select-box::after {
   content: '';

@@ -31,7 +31,7 @@ const CheckboxDropdown = ({ options, placeholder, onChange }) => {
   return (
     <div className="input-container nodrag" ref={dropdownRef}>
       <div className="select-box" onClick={toggleDropdown}>
-        <div className="input-box">
+        <div className="input-box" style={{ cursor: "pointer" }}>
           {selectedValues.length ? selectedValues.join(", ") : `${placeholder}`}
         </div>
       </div>

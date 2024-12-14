@@ -20,11 +20,10 @@ const TextNode = ({ id }) => {
   };
 
   // Handle text change and update variables dynamically
-  const handleTextChange = (e) => {
-    const newText = e.target.value;
-    setText(newText);
+  const handleTextChange = (value) => {
+    setText(value);
 
-    const detectedVariables = detectVariables(newText);
+    const detectedVariables = detectVariables(value);
     setVariables(detectedVariables);
 
     // Update the node internals to reflect new handles

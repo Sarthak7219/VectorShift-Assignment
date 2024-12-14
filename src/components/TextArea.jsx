@@ -18,7 +18,7 @@ const TextArea = ({ value, placeholder, rows = 4, onChange }) => {
         className="input-box nodrag"
         rows={rows}
         value={value}
-        onChange={(e) => onChange(e)}
+        onChange={(e) => onChange(e.target.value)}
         onInput={handleInput}
       ></textarea>
     </div>

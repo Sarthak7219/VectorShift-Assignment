@@ -5,9 +5,6 @@ import TextInput from "../components/TextInput";
 import SelectInput from "../components/SelectInput";
 
 const OutputNode = ({ id, data }) => {
-  const [currName, setCurrName] = useState(
-    data?.outputName || id.replace("customOutput-", "output_")
-  );
   const [outputType, setOutputType] = useState(data.outputType || "Text");
   return (
     <div className="basenode">
@@ -19,11 +16,7 @@ const OutputNode = ({ id, data }) => {
       />
 
       <div className="node-content">
-        <TextInput
-          value={currName}
-          onChange={setCurrName}
-          placeholder="Enter output name"
-        />
+        <TextInput placeholder="Enter output name" />
         <SelectInput
           label="Type"
           value={outputType}

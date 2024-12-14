@@ -21,7 +21,7 @@ const TimedLoopNode = ({ id, data }) => {
           label="Time format"
           value={timeFormat}
           placeholder="Choose time format"
-          onChange={(e) => setTimeFormat(e.target.value)}
+          onChange={setTimeFormat}
           options={[
             { value: "secs", label: "Seconds" },
             { value: "mins", label: "Minutes" },

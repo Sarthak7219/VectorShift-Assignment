@@ -18,13 +18,13 @@ const LLMNode = ({ id, data }) => {
           placeholder="Write your prompt here"
           rows={4}
           value={text}
-          onChange={(value) => setText(value)}
+          onChange={setText}
         />
         <SelectInput
           label="Model"
           value={inputType}
           placeholder="Choose AI Model"
-          onChange={(value) => setInputType(value)}
+          onChange={setInputType}
           options={[
             { value: "gpt-3", label: "GPT-3" },
             { value: "gpt-4", label: "GPT-4" },

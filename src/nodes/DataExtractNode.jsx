@@ -39,7 +39,7 @@ const DataExtractNode = ({ id, data }) => {
           label="Output format"
           value={outputType}
           placeholder="Choose output format"
-          onChange={(e) => setOutputType(e.target.value)}
+          onChange={setOutputType}
           options={[
             { value: "excel", label: "Excel (.xlsx, .xls)" },
             { value: "json", label: "JSON (.json)" },
